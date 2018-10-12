@@ -4,9 +4,10 @@
   <ul>
     <li *ngFor="let match of matchesData$.matches">
       <ul>
-        <li id="title">{{match.homeTeam.name}} vs. {{match.awayTeam.name}}</li>
-        <li>Winner: {{match.score.winner}}</li>
-        <li>UTC Date: {{match.utcDate}}</li>
+        <li id="title">{{ match.homeTeam.name }} vs. {{ match.awayTeam.name }}</li>
+        <li>Score: {{ match.score.fullTime.homeTeam }} - {{ match.score.fullTime.awayTeam }}</li>
+        <li>Winner: {{ match.score.winner | winner:match }}</li>
+        <li>Date: {{ match.utcDate | date : 'dd/MM/yyyy' : 'UTC' }}</li>
       </ul>
     </li>
   </ul>

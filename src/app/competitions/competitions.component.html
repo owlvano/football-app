@@ -6,7 +6,7 @@
 
     <ul>
       <li>Area: {{ competition.area.name }}</li>
-      <li>From {{ competition.currentSeason.startDate }} to {{ competition.currentSeason.endDate }} </li>
+      <li>From {{ competition.currentSeason.startDate | date : 'dd/MM/yyyy' }} to {{ competition.currentSeason.endDate | date : 'dd/MM/yyyy' }} </li>
     </ul>
   </li>
 </ul>

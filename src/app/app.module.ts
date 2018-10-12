@@ -8,13 +8,15 @@ import { MatchesComponent } from './matches/matches.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { IdsFilterPipe } from './ids-filter.pipe';
+import { WinnerPipe } from './winner.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompetitionsComponent,
     MatchesComponent,
-    IdsFilterPipe
+    IdsFilterPipe,
+    WinnerPipe
   ],
   imports: [
     BrowserModule,
