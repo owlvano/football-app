@@ -9,7 +9,6 @@ import { MatchesComponent } from './matches/matches.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IdsFilterPipe } from './shared/pipes/ids-filter.pipe';
 import { WinnerPipe } from './shared/pipes/winner.pipe';
-import { CustomPipePipe } from './shared/pipes/custom-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { CustomPipePipe } from './shared/pipes/custom-pipe.pipe';
     CompetitionsComponent,
     MatchesComponent,
     IdsFilterPipe,
-    WinnerPipe,
-    CustomPipePipe
+    WinnerPipe
   ],
   imports: [
     BrowserModule,
