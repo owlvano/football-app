@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/services/data.service';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { MatchesData } from '../shared/models';
 
 @Component({
   selector: 'app-matches',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MatchesComponent implements OnInit {
 
   private _competitionId: number;
-  matchesData$: Object;
+  matchesData: MatchesData;
 
   constructor(private data: DataService, private route: ActivatedRoute) { 
     this.route.params.subscribe(
@@ -21,7 +21,7 @@ export class MatchesComponent implements OnInit {
 
   ngOnInit() {
     this.data.getMatches(this._competitionId).subscribe(
-      data => this.matchesData$ = data
+      data => this.matchesData = data
     );
   }
 

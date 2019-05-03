@@ -1,21 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Winner, Match } from '../models';
 
 @Pipe({
   name: 'winner'
 })
 export class WinnerPipe implements PipeTransform {
 
-  transform(winner: string, match: any): any {
+  transform(winner: Winner, match: Match): any {
     if (match === undefined) {
       return winner;
     }
-    if (winner === 'HOME_TEAM') {
-      return match.homeTeam.name;
-    } else if (winner === 'AWAY_TEAM') {
-      return match.awayTeam.name;
-    } else {
-      return winner;
-    }
-  }
 
+    switch(winner) { 
+      case Winner.HomeTeam:  return match.homeTeam.name;
+      case Winner.AwayTeam: return match.awayTeam.name;
+      case Winner.Draw: return 'Draw';
+      default: return winner;
+    } 
+  }
 }

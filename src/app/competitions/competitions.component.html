@@ -1,7 +1,7 @@
 <h1>Competitions</h1>
 
-<ul *ngIf="competitionsData$">
-  <li *ngFor="let competition of competitionsData$.competitions | idsFilter:availableCompetitionIds">
+<ul *ngIf="competitionsData">
+  <li *ngFor="let competition of competitionsData.competitions | idsFilter:availableCompetitionIds">
     <a class="title" routerLink="{{ competition.id }}/matches">{{ competition.name }}</a>
 
     <ul>

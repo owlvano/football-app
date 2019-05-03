@@ -1,8 +1,8 @@
-<div *ngIf="matchesData$">
-  <h1>Matches of the "{{ matchesData$.competition.name }}" competition</h1>
+<div *ngIf="matchesData">
+  <h1>Matches of the "{{ matchesData.competition.name }}" competition</h1>
 
   <ul>
-    <li *ngFor="let match of matchesData$.matches">
+    <li *ngFor="let match of matchesData.matches">
       <ul>
         <li id="title">{{ match.homeTeam.name }} vs. {{ match.awayTeam.name }}</li>
         <li>Score: {{ match.score.fullTime.homeTeam }} - {{ match.score.fullTime.awayTeam }}</li>

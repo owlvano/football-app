@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/services/data.service';
+import { CompetitionsData } from '../shared/models';
 
 
 @Component({
@@ -10,13 +11,13 @@ import { DataService } from '../shared/services/data.service';
 export class CompetitionsComponent implements OnInit {
 
   availableCompetitionIds = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021];
-  competitionsData$: Object;
+  competitionsData: CompetitionsData;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
     this.data.getAllCompetitions().subscribe(
-      data =>  this.competitionsData$ = data
+      data =>  this.competitionsData = data
     );
 
     // availableCompetitions$: Object;

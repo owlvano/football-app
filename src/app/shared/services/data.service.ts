@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { CompetitionsData, MatchesData } from '../models';
 
 
 @Injectable({
@@ -13,12 +13,12 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getAllCompetitions() {
-    return this.http.get('http://api.football-data.org/v2/competitions/',
+    return this.http.get<CompetitionsData>('http://api.football-data.org/v2/competitions/',
     {'headers': this._headers});
   }
 
-  getMatches(competitionId) {
-    return this.http.get('http://api.football-data.org/v2/competitions/' + competitionId + '/matches',
+  getMatches(competitionId: number) {
+    return this.http.get<MatchesData>(`http://api.football-data.org/v2/competitions/${competitionId}/matches`,
     {'headers': this._headers});
   }
 }
