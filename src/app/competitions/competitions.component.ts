@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../shared/services/data.service';
 import { CompetitionsData } from '../shared/models';
-
+import { DataService } from '../shared/services';
 
 @Component({
   selector: 'app-competitions',

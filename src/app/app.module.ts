@@ -1,14 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompetitionsComponent } from './competitions/competitions.component';
 import { MatchesComponent } from './matches/matches.component';
-
-import { HttpClientModule } from '@angular/common/http';
-import { IdsFilterPipe } from './shared/pipes/ids-filter.pipe';
-import { WinnerPipe } from './shared/pipes/winner.pipe';
+import { IdsFilterPipe, WinnerPipe } from './shared/pipes';
 
 @NgModule({
   declarations: [

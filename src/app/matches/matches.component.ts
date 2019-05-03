@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../shared/services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatchesData } from '../shared/models';
+import { DataService } from '../shared/services';
 
 @Component({
   selector: 'app-matches',
